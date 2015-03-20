@@ -22,4 +22,11 @@
   <%- resource_class.omniauth_providers.each do |provider| %>
     <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
   <% end -%>
+
+
+<%= form_for(@page, html: { multipart: true }) do |f| %>
+ <span class="picture">
+    <%= f.file_field :picture %>
+  </span>
+<% end -%>
 <% end -%>
