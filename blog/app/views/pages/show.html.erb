@@ -1,0 +1,19 @@
+
+<p>
+   <%= image_tag @page.picture.url if @page.picture? %>
+    
+  </p>
+  <p>
+  <strong>Provider Name:</strong>
+  <%= @page.providername %>
+</p>
+ 
+<p>
+  <strong>About Us:</strong>
+  <%= @page.providerinfo %>
+</p>
+<p>
+  <strong>Contact Us:</strong>
+  <%= @page.contactus %>
+</p>
+<%= link_to 'Back', pages_path %>
