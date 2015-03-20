@@ -59,4 +59,10 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+    resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
 end
