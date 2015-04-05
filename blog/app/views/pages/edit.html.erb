@@ -1,6 +1,6 @@
 <h1>Editing Page</h1>
- 
-<%= form_for :page, url: pages_path(@article), method: :patch do |f| %>
+
+<%= form_for :page, url: page_path(@page), method: :patch do |f| %>
  
   <% if @page.errors.any? %>
     <div id="error_explanation">
@@ -17,27 +17,20 @@
   <% end %>
  
   <p>
-   
-
-    <%= f.label :Providername %><br>
-   <textarea>
-
-</textarea>
-  </p>
-  
-  <p>
-    <%= f.label :ProviderInfo %><br>
-    <textarea>
-
-</textarea>
+    <%= f.label :providername %><br>
+    <%= f.text_area :providername %>
   </p>
  
   <p>
-    <%= f.label :Contactus %><br>
-    <textarea>
-
-</textarea>
+    <%= f.label :providerinfo %><br>
+    <%= f.text_area :providerinfo %>
   </p>
+ <p>
+    <%= f.label :contactus %><br>
+    <%= f.text_area :contactus %>
+  </p>
+ 
+ 
   <p>
     <%= f.submit %>
   </p>
