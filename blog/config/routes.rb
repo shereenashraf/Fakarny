@@ -59,4 +59,12 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  #get 'index/sports'
+  #root 'relationships#sports'
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+   resources :relationships,       only: [:create, :destroy]
 end
