@@ -13,9 +13,7 @@ class PagesController < ApplicationController
   end
   
   def create
-  
   @page = Page.new(page_params)
- 
    if @page.save
     redirect_to @page
   else

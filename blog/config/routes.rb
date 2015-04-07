@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+resources :matfakarnies do
+    member do
+    post 'upvote'
+  end
+end
  resources :pages
   root 'welcome#index'
 
