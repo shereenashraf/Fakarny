@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  post 'welcome/follow'
 
   devise_for :users
   #get 'homes/show'
+
+  post '/follow' => 'welcome#follow'
+   
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -17,7 +21,8 @@ Rails.application.routes.draw do
 
  
   root 'welcome#index'
-
+ 
+ resources :intrests
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
