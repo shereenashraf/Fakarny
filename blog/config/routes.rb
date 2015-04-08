@@ -9,6 +9,13 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
  resources :pages
+ resources :events do
+     resources:questions 
+
+     end
+
+
+ 
   root 'welcome#index'
 
   # Example of regular route:

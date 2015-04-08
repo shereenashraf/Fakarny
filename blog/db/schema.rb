@@ -11,11 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320182206) do
+ActiveRecord::Schema.define(version: 20150407203812) do
 
   create_table "arts", force: true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.date     "date"
+    t.string   "time"
+    t.string   "place"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,6 +44,15 @@ ActiveRecord::Schema.define(version: 20150320182206) do
     t.datetime "updated_at",   null: false
     t.string   "picture"
   end
+
+  create_table "questions", force: true do |t|
+    t.text     "body"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "questions", ["event_id"], name: "index_questions_on_event_id"
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"
