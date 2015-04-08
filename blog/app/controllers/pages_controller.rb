@@ -15,11 +15,12 @@ class PagesController < ApplicationController
   def create
   @page = Page.new(page_params)
    if @page.save
-    redirect_to @page
+    redirect_to pages_path
   else
     render 'new'
 end
 end
+
  
 private
   def page_params

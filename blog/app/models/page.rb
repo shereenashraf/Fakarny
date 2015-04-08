@@ -6,6 +6,7 @@ class Page < ActiveRecord::Base
  validates :providerinfo, presence: true,
                     length: { minimum: 10 }
                  mount_uploader :picture, PictureUploader
-   
+
+     
     end
 

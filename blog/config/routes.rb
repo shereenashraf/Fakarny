@@ -16,6 +16,9 @@ end
  resources :pages
   root 'welcome#index'
 
+
+
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
