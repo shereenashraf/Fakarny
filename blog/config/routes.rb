@@ -1,15 +1,21 @@
 Rails.application.routes.draw do
+  get 'provider/question'
+
   devise_for :views
   get 'welcome/index'
 
   devise_for :users
   #get 'homes/show'
-  
+  resources :askproviders
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
  resources :pages
+  resources :askproviders do
+    resources :answers
+end
+
   root 'welcome#index'
 
   # Example of regular route:
