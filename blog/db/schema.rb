@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 20150408232330) do
     t.datetime "updated_at"
   end
 
+  create_table "followings", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "intrests", force: true do |t|
+    t.string   "intrest_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "musics", force: true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
@@ -82,6 +93,23 @@ ActiveRecord::Schema.define(version: 20150408232330) do
   create_table "sports", force: true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subs", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_friendships", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_intrests", force: true do |t|
+    t.integer  "inrest_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

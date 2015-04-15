@@ -1,0 +1,23 @@
+
+	
+
+	<%= form_for :intrest  do |intrest| %>
+
+
+	<%= form_tag(intrests_path :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+  <%= submit_tag "Search", :name => nil %>
+
+<% end %>
+<% end %>
+<ul>
+<% @intrests.each do |intrest| %>
+
+
+	<li>
+		<%= link_to intrest.intrest_name , intrest, class: "btn btn-primary" %>
+        
+	</li>
+
+	<% end %>
+</ul>
