@@ -12,6 +12,10 @@ class PagesController < ApplicationController
   @page = Page.new
   end
   
+  def edit
+  @page = Page.find(params[:id])
+end
+
   def create
   @page = Page.new(page_params)
    if @page.save
@@ -21,7 +25,17 @@ class PagesController < ApplicationController
 end
 end
 
+
+ def update
+  @page = Page.find(params[:id])
+
  
+  if @page.update(page_params)
+    redirect_to @page
+  else
+    render 'edit'
+  end
+end
 private
   def page_params
     params.require(:page).permit(:providername, :providerinfo, :contactus, :picture)
