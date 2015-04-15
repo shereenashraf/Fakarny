@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+<<<<<<< HEAD
  resources :pages
  resources :events do
      resources:questions 
@@ -26,7 +27,15 @@ Rails.application.routes.draw do
 
 
  
+=======
+  Rails.application.routes.draw do
+ 
+  #resources :create_events
+   resources :creatingevents
+
+>>>>>>> f12660a4fafb17e3ccd948c15bcf83f9def39f33
   root 'welcome#index'
+end
 
 
   resources :events
