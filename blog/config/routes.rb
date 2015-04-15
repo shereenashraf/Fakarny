@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :views
   get 'welcome/index'
   post 'welcome/follow'
 
