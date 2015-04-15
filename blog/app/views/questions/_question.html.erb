@@ -1,0 +1,10 @@
+<p>
+  <strong>question:</strong>
+  <%= question.body %>
+</p>
+ 
+<p>
+  <%= link_to 'delete', [question.event, question],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
