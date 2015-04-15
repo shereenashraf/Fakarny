@@ -19,7 +19,7 @@ end
 end
 
             
-   validate  :picture_size
+ 
 
   private
 
@@ -29,6 +29,6 @@ end
         errors.add(:picture, "should be less than 5MB")
       end
     end
-    end
+  
 
 
