@@ -1,0 +1,11 @@
+<ul>
+<% @intrests.each do |intrest| %>
+
+
+	<li>
+		<%= link_to intrest.intrest_name , intrest, class: "btn btn-primary" %>
+        
+	</li>
+
+	<% end %>
+</ul>

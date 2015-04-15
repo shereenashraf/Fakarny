@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'provider/question'
+
+  devise_for :views
   get 'welcome/index'
   post 'welcome/follow'
 
@@ -18,7 +21,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-<<<<<<< HEAD
+
+
  resources :pages
  resources :events do
      resources:questions 
@@ -26,19 +30,28 @@ Rails.application.routes.draw do
      end
 
 
- 
-=======
-  Rails.application.routes.draw do
+
  
   #resources :create_events
    resources :creatingevents
 
->>>>>>> f12660a4fafb17e3ccd948c15bcf83f9def39f33
-  root 'welcome#index'
+
+resources :matfakarnies do
+ end 
+    member do
+    post 'upvote'
+  end
+
+
+
+
+  resources :askproviders do
+    resources :answers
 end
 
 
-  resources :events
+  root 'welcome#index'
+
 
  
  resources :intrests
