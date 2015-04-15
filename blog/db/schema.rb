@@ -11,6 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20150403174827) do
+=======
 ActiveRecord::Schema.define(version: 20150408232330) do
 
   create_table "answers", force: true do |t|
@@ -22,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150408232330) do
   end
 
   add_index "answers", ["article_id"], name: "index_answers_on_article_id"
+>>>>>>> 5c4f948690b12f961bf3a843098d7a6a3e9353b9
 
   create_table "arts", force: true do |t|
     t.integer  "follower_id"
@@ -30,6 +34,10 @@ ActiveRecord::Schema.define(version: 20150408232330) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+  create_table "matfakarnies", force: true do |t|
+    t.string   "title"
+=======
   create_table "askproviders", force: true do |t|
     t.text     "text"
     t.datetime "created_at"
@@ -43,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150408232330) do
 
   create_table "intrests", force: true do |t|
     t.string   "intrest_name"
+>>>>>>> 5c4f948690b12f961bf3a843098d7a6a3e9353b9
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -150,5 +159,11 @@ ActiveRecord::Schema.define(version: 20150408232330) do
 
   add_index "views", ["email"], name: "index_views_on_email", unique: true
   add_index "views", ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
+
+  create_table "votes", force: true do |t|
+    t.integer  "matfakarny_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -1,7 +1,7 @@
 
 <p>
-   <%= image_tag @page.picture.url if @page.picture? %>
-    
+  
+<%= image_tag @page.picture_url.to_s if @page.picture_url.present? %>    
   </p>
   <p>
   <strong>Provider Name:</strong>
@@ -16,5 +16,5 @@
   <strong>Contact Us:</strong>
   <%= @page.contactus %>
 </p>
+
 <%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
