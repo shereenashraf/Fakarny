@@ -1,13 +1,25 @@
 class Page < ActiveRecord::Base
+
         mount_uploader :picture, PictureUploader
         
+
    validates :providername, presence: true,
                     length: { minimum: 5 }
                 
  validates :providerinfo, presence: true,
                     length: { minimum: 10 }
+
+                 mount_uploader :picture, PictureUploader
+
+ 
+def self.search(query)
+  where("providername like ?", "%#{query}%") 
+end
+
+end
+
             
-   validate  :picture_size
+ 
 
   private
 
@@ -17,5 +29,6 @@ class Page < ActiveRecord::Base
         errors.add(:picture, "should be less than 5MB")
       end
     end
-    end
+  
+
 
