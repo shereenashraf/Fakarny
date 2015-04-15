@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   get 'welcome/index'
   post 'welcome/follow'
+  post 'welcome/unfollow'
 
   devise_for :users
   #get 'homes/show'
 
   post '/follow' => 'welcome#follow'
+  post '/unfollow' => 'welcome#unfollow'
    
   
   # The priority is based upon order of creation: first created -> highest priority.
