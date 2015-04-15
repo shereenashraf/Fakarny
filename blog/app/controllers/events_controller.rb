@@ -28,11 +28,4 @@ private
 
 end
 
-def destroy
-	event.destroy
-event.find('amr').destroy
-event.destroy('amr')
-event.where(name: 'amr').destroy_all
-event.destroy_all(name: 'name')
-end
 end 
