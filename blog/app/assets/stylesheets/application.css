@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+
+.follow-btn {
+	background-color: #2b9ab6;
+	padding: 8px;
+	padding-left: 12px;
+	padding-right: 12px;
+	border-radius: 5px;
+	color: #FFF;
+	text-decoration: none;
+	font-family: 'helvetica'
+}
+
+.unfollow-btn {
+	background-color: rgb(229, 72, 72);
+}
