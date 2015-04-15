@@ -1,0 +1,26 @@
+<h1>Listing Questions</h1>
+ 
+<table>
+  <tr>
+    <th>Text</th>
+  </tr>
+ 
+  <% @askproviders.each do |askprovider| %>
+
+  
+      <td><%= askprovider.text %></td>
+    </tr>
+    <td><%= link_to 'Post reply', askprovider_path(askprovider) %></td>
+    <td><%= link_to 'Delete', askprovider_path(askprovider),
+              method: :Delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    <tr>
+
+  <% end %>
+
+</table>
+
+  <%= link_to 'New Question', new_askprovider_path %>
+
+  <%= link_to 'Back', pages_path %>
+

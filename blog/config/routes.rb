@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'provider/question'
+
   devise_for :views
   get 'welcome/index'
   post 'welcome/follow'
@@ -9,10 +11,18 @@ Rails.application.routes.draw do
   post '/follow' => 'welcome#follow'
    
   
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
+ resources :pages
+  resources :askproviders do
+    resources :answers
+end
+
+
  resources :pages 
   root 'welcome#index'
  
