@@ -1,23 +1,63 @@
 Rails.application.routes.draw do
+  get 'provider/question'
+
+  devise_for :views
   get 'welcome/index'
   post 'intrests/unfollow'
  
 
   devise_for :users
   #get 'homes/show'
+  post '/follow' => 'welcome#follow' 
 
-  post '/follow' => 'welcome#follow'
+  post'/unfollow' => 'welcome#unfollow'
+
+
+
+
    
   post '/unfollow' => 'intrests#unfollow'
   
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
+
  resources :pages
+ resources :events do
+     resources:questions 
+
+     end
+
+
+
+ 
+  #resources :create_events
+   resources :creatingevents
+
+
+resources :matfakarnies do
+ end 
+    member do
+    post 'upvote'
+  end
+
+
+
+
+  resources :askproviders do
+    resources :answers
+end
+
+
   root 'welcome#index'
+
+
  
  resources :intrests
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
