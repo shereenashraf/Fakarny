@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :views
   get 'welcome/index'
+  post 'intrests/unfollow'
+ 
   post 'welcome/follow'
+  post 'welcome/unfollow'
 
   devise_for :users
   #get 'homes/show'
@@ -14,7 +17,11 @@ Rails.application.routes.draw do
 
 
 
+  post '/follow' => 'welcome#follow'
+  post '/unfollow' => 'welcome#unfollow'
+
    
+  post '/unfollow' => 'intrests#unfollow'
   
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -4,3 +4,9 @@
 <div id="hidden-user-id" style="display: none;"><%= current_user.id %></div>
 
 <a href="#" class="follow-btn" id="follow-intrest">Follow</a>
+
+<a href=" " class="unfollow-btn" id="unfollow-intrest">unfollow</a>
+
+
+ <td><%= link_to 'unFollow', intrests_path,
+              method: :destroy%></td>
