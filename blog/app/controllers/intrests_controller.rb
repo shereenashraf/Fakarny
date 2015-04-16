@@ -15,6 +15,17 @@ end
 		UserIntrest.create(user_id: @user_id, intrest_id: @Intrest_id);
 	end
 
+def destroy
+
+
+  @user = UserIntrest.find(params[:user_id], params[:intrest_id]);
+  @user.destroy
+ 
+  
+end
+
+
+
 
 def unfollow
 

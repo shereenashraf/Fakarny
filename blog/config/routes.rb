@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
   post 'intrests/unfollow'
  
+  post 'welcome/follow'
+  post 'welcome/unfollow'
 
   devise_for :users
   #get 'homes/show'
@@ -14,6 +16,9 @@ Rails.application.routes.draw do
 
 
 
+
+  post '/follow' => 'welcome#follow'
+  post '/unfollow' => 'welcome#unfollow'
 
    
   post '/unfollow' => 'intrests#unfollow'
