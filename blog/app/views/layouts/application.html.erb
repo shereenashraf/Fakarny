@@ -1,3 +1,4 @@
+<%= link_to 'My Pages', controller: 'pages' %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,10 +29,11 @@
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
 <br></br>
- <%= link_to 'My Pages', controller: 'pages' %>
+  
 <br></br> 
  <br>
  <%= link_to 'Create a New page!', new_page_path %>
+
 <br></br> 
 
   <%= link_to 'Edit your profile', edit_user_registration_path, :class => 'navbar-link' %> |

@@ -18,10 +18,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
  resources :pages
+
   resources :askproviders do
     resources :answers
 end
-
+post '/askproviders/:id/answers/new' => 'answers#new'
 
  resources :pages 
   root 'welcome#index'

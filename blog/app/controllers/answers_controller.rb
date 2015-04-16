@@ -7,14 +7,16 @@ class AnswersController < ApplicationController
   end
 	def create
     @askprovider = Askprovider.find(params[:askprovider_id])
-    @answer = @askprovider.answers.create(answer_params)
+    @answer = Answers.create(answer_params)
     redirect_to askprovider_path(@askprovider)
   end
  
-  
+  def new
+    @answer = Answers.new
+  end
   private
     def answer_params
-      params.require(:answer).permit(:answerer, :body)
+      params.require(:answers).permit(:answerer, :body)
     end
 end
 
