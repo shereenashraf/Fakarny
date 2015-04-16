@@ -1,3 +1,4 @@
+<%= link_to 'My Pages', controller: 'pages' %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,10 +38,13 @@
   Logged in as <strong><%= current_user.email %></strong>.
 <br></br>
 
+
  <%= link_to 'My Pages', controller: 'pages' %>
+
 <br></br> 
  <br>
  <%= link_to 'Create a New page!', new_page_path %>
+
 <br></br> 
 
 

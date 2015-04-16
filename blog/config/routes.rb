@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
 
  resources :pages
+
  resources :events do
      resources:questions 
 
@@ -45,10 +46,11 @@ resources :matfakarnies do
 
 
 
+
   resources :askproviders do
     resources :answers
 end
-
+post '/askproviders/:id/answers/new' => 'answers#new'
 
   root 'welcome#index'
 

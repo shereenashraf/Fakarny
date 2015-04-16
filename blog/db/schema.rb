@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 20150408232330) do
   create_table "answers", force: true do |t|
     t.string   "answerer"
     t.text     "body"
-    t.integer  "article_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "askprovider_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
-  add_index "answers", ["article_id"], name: "index_answers_on_article_id"
+  add_index "answers", ["askprovider_id"], name: "index_answers_on_askprovider_id"
 
 
 
