@@ -25,17 +25,18 @@ end
 end
 
   def create
-  
   @page = Page.new(page_params)
- 
    if @page.save
-    redirect_to @page
+    redirect_to pages_path
   else
     render 'new'
 end
 end
+
+
  def update
   @page = Page.find(params[:id])
+
  
   if @page.update(page_params)
     redirect_to @page
