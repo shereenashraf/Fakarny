@@ -7,6 +7,21 @@ class IntrestsController < ApplicationController
 	end
 
 
+def unfollow
+
+@user_id = params[:user_id];
+		@Intrest_id = params[:intrest_id];
+  @user = UserIntrest.find(params[:id])
+  @user.destroy 
+
+ 
+ 
+end
+   
+
+
+
+
 	def show
 		@intrest = Intrest.find(params[:id])
 	end
