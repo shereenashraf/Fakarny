@@ -1,0 +1,15 @@
+
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+ 
+  <% @matfakarnies.each do |matfakarny| %>
+    <tr>
+      <td><%= matfakarny.title %></td>
+    <td><%= pluralize(matfakarny.votes.count, "vote") %></td>
+    <td><%= button_to '+1', upvote_matfakarny_path(matfakarny), method: :post %></td>
+
+  </tr>
+<% end %>
+</table>

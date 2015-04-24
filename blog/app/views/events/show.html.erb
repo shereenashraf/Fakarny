@@ -1,0 +1,57 @@
+<<<<<<< HEAD
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @event.time %>
+</p>
+ 
+<p>
+  <strong>Place:</strong>
+  <%= @event.place %>
+  
+  
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<h2>Questions  and  Replies </h2>
+<%= render @event.questions %>
+ 
+<h2>Ask a question:</h2>
+<%= form_for([@event, @event.questions.build]) do |f| %>
+ <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+    <p>
+    <%= f.submit"ask" %>
+  </p>
+  <% end %>
+<h2>reply:</h2>
+<%= form_for([@event, @event.questions.build]) do |f| %>
+
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit"reply" %>
+  </p>
+<% end %>
+
+=======
+<h1><%=@event.name %></h1> 
+
+<div id="hidden-event-id" style="display: none;"><%= @event.id %></div>
+ <div id="hidden-user-id" style="display: none;"><%= current_user.id %></div>
+
+  <a href="#" class="follow-btn" id="follow-event">Follow</a> 
+  <a href='##' class="unfollowEvent-btn" id='unfollow-event'>unfollow</a>
+>>>>>>> c3c713fdf1d842a3e619df93777646a40186ed58
