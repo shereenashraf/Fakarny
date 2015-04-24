@@ -60,6 +60,7 @@ end
 end
 
 get '/:controller/:action' => 'pages#index'
+
 post '/askproviders/:id/answers/new' => 'answers#new'
 
   root 'welcome#index'
