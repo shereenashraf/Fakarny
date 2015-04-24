@@ -1,14 +1,16 @@
 <h1>Listing Pages</h1>
 
 
+
   <%= text_field_tag :search, params[:search], placeholder: "Search" %>
   <%= submit_tag "Search", :name => nil %>
 
-<% end %>
+
 
 
 
 <%= link_to 'New Page', new_page_path %>
+
 
 
 <table>
@@ -28,12 +30,16 @@
        
     </tr>
 
-<% end %>
+
 </table>
 
-  <%= link_to 'Ask a question', controller: 'askproviders' %>
 <%= link_to 'Back', pages_path %>
+<% end %>
+
+  <%= link_to 'Ask a question', controller: 'askproviders' %>
+
 
 
 
  
+

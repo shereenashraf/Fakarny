@@ -1,0 +1,29 @@
+<h1>Matfakarny !</h1>
+
+<%= form_for :matfakarny, url: matfakarnies_path do |f| %>
+
+<% if @matfakarny.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@matfakarny.errors.count, "error") %> prohibited
+        this matfakarny from being saved:
+      </h2>
+      <ul>
+        <% @matfakarny.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+  
+<% end %>
