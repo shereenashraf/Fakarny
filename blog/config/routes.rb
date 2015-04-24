@@ -45,12 +45,11 @@ Rails.application.routes.draw do
 
 
 resources :matfakarnies do
- end 
+ 
     member do
     post 'upvote'
   end
-
-
+end
 
 
 
