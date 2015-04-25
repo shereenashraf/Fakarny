@@ -3,26 +3,20 @@ Rails.application.routes.draw do
 
   devise_for :views
   get 'welcome/index'
-  post 'intrests/unfollow'
  
-  post 'welcome/follow'
+ 
+  
   post 'welcome/unfollow'
 
   devise_for :users
   #get 'homes/show'
   post '/follow' => 'welcome#follow' 
 
-  post'/unfollow' => 'welcome#unfollow'
+
+get 'intrests/:controller/:action/:user_id/:intrest_id' => 'intrests#show'
 
 
 
-
-  post '/follow' => 'welcome#follow'
-  post '/unfollow' => 'welcome#unfollow'
-
-   
-  post '/unfollow' => 'intrests#unfollow'
-  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -45,9 +39,10 @@ Rails.application.routes.draw do
 
 
 resources :matfakarnies do
- end 
+ 
     member do
     post 'upvote'
+   end  
   end
 
 

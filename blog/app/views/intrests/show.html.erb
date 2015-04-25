@@ -1,12 +1,12 @@
-<h1><%=@intrest.intrest_name %></h1>
+<h1><%=@intrest.intrest_name	%></h1>
+<% @follow = UserIntrest.find_by(user_id: current_user.id, inrest_id:@intrest.id) %>
+<%  if @follow.nil? %>
 
-<div id="hidden-intrest-id" style="display: none;"><%= @intrest.id %></div>
-<div id="hidden-user-id" style="display: none;"><%= current_user.id %></div>
+	
 
-<a href="#" class="follow-btn" id="follow-intrest">Follow</a>
+<%= link_to "Follow" , {controller: "intrests", action: "follow", user_id: current_user.id, intrest_id: @intrest.id}  %>
 
-<a href=" " class="unfollow-btn" id="unfollow-intrest">unfollow</a>
+<% else %>
 
-
- <td><%= link_to 'unFollow', intrests_path,
-              method: :destroy%></td>
+<%= link_to "unFollow" , {controller: "intrests", action: "unfollow", user_id: current_user.id, intrest_id: @intrest.id}  %>
+<%end%>

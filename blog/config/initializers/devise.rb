@@ -4,7 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '1c202690310215cd1f13446c175a8d9a9fc026e2665b3077a4f72e6514a54c8bbf60e35323c37b7a0da7f834eed841b4f9b343064ecf131fa562ad3ef48fb7f3'
+  #config.secret_key = '1c202690310215cd1f13446c175a8d9a9fc026e2665b3077a4f72e6514a54c8bbf60e35323c37b7a0da7f834eed841b4f9b343064ecf131fa562ad3ef48fb7f3'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -229,6 +229,7 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
+
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
@@ -256,4 +257,10 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  #config.secret_key = '-- secret key --'
+
+
+ config.secret_key = 'f82af547fa6a34ae5a652267d285fcb00fe25fd64a99e9ac5b5992d28957d2c58d9ebc8fc2a981db073ee7af6ec21c263ceda7bf20d76ef3f9db27e69c2cc200'
+
 end
+
