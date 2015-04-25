@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.text :body
       t.references :event, index: true
 
-       t.timestamps  
+       t.timestamps null: false
     end
   
 
