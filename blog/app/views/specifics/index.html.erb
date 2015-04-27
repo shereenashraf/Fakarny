@@ -1,0 +1,19 @@
+<%= form_for :specific  do |specific| %>
+<%= form_tag(specifics_path :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+  <%= submit_tag "Search", :name => nil %>
+
+<% end %>
+<% end %>
+<ul>
+<% @specifics.each do |specific| %>
+<% if specific.intrest_id = params[:intrest_id]%>
+
+	<li>
+		<%= link_to specific.specific_name , specific, class: "btn btn-primary" %>
+        
+	</li>	
+<% end %>
+
+	<% end %>
+</ul>

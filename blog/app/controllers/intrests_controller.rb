@@ -1,7 +1,7 @@
 class IntrestsController < ApplicationController
 
 
-	   def index
+     def index
   if params[:search]
     @intrests =Intrest.search(params[:search]).order("created_at DESC")
   else
@@ -9,13 +9,13 @@ class IntrestsController < ApplicationController
   end
 end
 
-	def follow 
-		@user_id = params[:user_id];
-		@Intrest_id = params[:intrest_id];
-		UserIntrest.create(user_id: params[:user_id], inrest_id: params[:intrest_id]);
+  def follow 
+    @user_id = params[:user_id];
+    @Intrest_id = params[:intrest_id];
+    UserIntrest.create(user_id: params[:user_id], inrest_id: params[:intrest_id]);
     @intrest = Intrest.find(@Intrest_id)
-    redirect_to intrests_path(@intrest)
-	end
+    redirect_to intrests_path
+  end
 
 
 
@@ -29,12 +29,12 @@ end
   
 
 
-	def show
-		@intrest = Intrest.find(params[:id])
-	end
+  def show
+    @intrest = Intrest.find(params[:id])
+  end
 
 
-	   def create
+     def create
   if params[:search]
     @intrests =Intrest.search(params[:search]).order("created_at DESC")
   else

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
 get 'intrests/:controller/:action/:user_id/:intrest_id' => 'intrests#show'
 
+get 'specifics/:controller/:action/:user_id/:specific_id' => 'specifics#show'
 
 
 
@@ -32,7 +33,7 @@ get 'intrests/:controller/:action/:user_id/:intrest_id' => 'intrests#show'
      end
 
 
-
+resources :specificintrests
  
   #resources :create_events
    resources :creatingevents
@@ -116,4 +117,5 @@ post '/askproviders/:id/answers/new' => 'answers#new'
     end
   end
    resources :relationships,       only: [:create, :destroy]
+   resources :specifics
 end

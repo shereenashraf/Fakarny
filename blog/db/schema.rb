@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416130643) do
+ActiveRecord::Schema.define(version: 20150427140703) do
 
   create_table "answers", force: true do |t|
     t.string   "answerer"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20150416130643) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "date"
+    t.string   "time"
+    t.string   "place"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "followings", force: true do |t|
@@ -81,6 +90,19 @@ ActiveRecord::Schema.define(version: 20150416130643) do
 
   add_index "questions", ["event_id"], name: "index_questions_on_event_id"
 
+  create_table "specific_intrests", force: true do |t|
+    t.string   "specific_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "specifics", force: true do |t|
+    t.string   "specific_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "intrest_id"
+  end
+
   create_table "sports", force: true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
@@ -109,6 +131,14 @@ ActiveRecord::Schema.define(version: 20150416130643) do
   create_table "user_intrests", force: true do |t|
     t.integer  "inrest_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_specific_intrests", force: true do |t|
+    t.integer  "intrest_id"
+    t.integer  "user_id"
+    t.integer  "specific_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
