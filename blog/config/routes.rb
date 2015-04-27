@@ -30,7 +30,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-
  resources :pages
 
  resources :events do
@@ -59,6 +58,7 @@ end
     resources :answers
 end
 
+get '/:controller/:action' => 'matfakarnies#index'
 get '/:controller/:action' => 'pages#index'
 
 post '/askproviders/:id/answers/new' => 'answers#new'

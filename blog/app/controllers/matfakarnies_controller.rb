@@ -26,6 +26,14 @@ end
   @matfakarny.votes.create
   redirect_to(matfakarny_path)
 end
+
+def destroy
+  @matfakarny = Matfakarny.find(params[:id])
+  @matfakarny.destroy
+ 
+  redirect_to matfakarnies_path
+end
+
   private
   def matfakarny_params
     params.require(:matfakarny).permit(:title)
