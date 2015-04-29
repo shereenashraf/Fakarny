@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425102709) do
+ActiveRecord::Schema.define(version: 20150427140703) do
 
   create_table "answers", force: true do |t|
     t.string   "answerer"
@@ -26,12 +26,6 @@ ActiveRecord::Schema.define(version: 20150425102709) do
   create_table "arts", force: true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "askproviders", force: true do |t|
-    t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -90,11 +84,24 @@ ActiveRecord::Schema.define(version: 20150425102709) do
   create_table "questions", force: true do |t|
     t.text     "body"
     t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "questions", ["event_id"], name: "index_questions_on_event_id"
+
+  create_table "specific_intrests", force: true do |t|
+    t.string   "specific_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "specifics", force: true do |t|
+    t.string   "specific_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "intrest_id"
+  end
 
   create_table "sports", force: true do |t|
     t.integer  "follower_id"
@@ -108,6 +115,14 @@ ActiveRecord::Schema.define(version: 20150425102709) do
     t.datetime "updated_at"
   end
 
+  create_table "user_events", force: true do |t|
+    t.integer  "user_id"
+    t.string   "event_id"
+    t.string   "integer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "user_friendships", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -116,6 +131,14 @@ ActiveRecord::Schema.define(version: 20150425102709) do
   create_table "user_intrests", force: true do |t|
     t.integer  "inrest_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_specific_intrests", force: true do |t|
+    t.integer  "intrest_id"
+    t.integer  "user_id"
+    t.integer  "specific_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
