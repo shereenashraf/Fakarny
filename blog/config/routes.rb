@@ -6,16 +6,18 @@ Rails.application.routes.draw do
  
  
   
-  post 'welcome/unfollow'
+
 
   devise_for :users
   #get 'homes/show'
-  post '/follow' => 'welcome#follow' 
+
 
 
 get 'intrests/:controller/:action/:user_id/:intrest_id' => 'intrests#show'
 
 get 'specifics/:controller/:action/:user_id/:specific_id' => 'specifics#show'
+
+
 
 
 

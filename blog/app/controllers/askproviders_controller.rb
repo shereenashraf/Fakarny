@@ -22,6 +22,7 @@ def destroy
  
   redirect_to askproviders_path
 end
+
   
 private
   def askprovider_params
