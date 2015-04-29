@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150415144228) do
+ActiveRecord::Schema.define(version: 20150425102709) do
 
   create_table "answers", force: true do |t|
     t.string   "answerer"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20150415144228) do
   end
 
   create_table "events", force: true do |t|
-    t.date     "date"
+    t.string   "date"
     t.string   "time"
     t.string   "place"
     t.text     "description"
@@ -87,41 +87,14 @@ ActiveRecord::Schema.define(version: 20150415144228) do
     t.string   "picture"
   end
 
-  create_table "providerquestions", force: true do |t|
-    t.text     "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "questions", force: true do |t|
     t.text     "body"
     t.integer  "event_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "questions", ["event_id"], name: "index_questions_on_event_id"
-
-  create_table "relationships", force: true do |t|
-    t.integer  "follower_id"
-    t.integer  "followed_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
-  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
-  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
-
-  create_table "replytoproviders", force: true do |t|
-    t.string   "providerreplier"
-    t.text     "body"
-    t.integer  "askprovider_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "replytoproviders", ["askprovider_id"], name: "index_replytoproviders_on_askprovider_id"
 
   create_table "sports", force: true do |t|
     t.integer  "follower_id"
@@ -131,14 +104,6 @@ ActiveRecord::Schema.define(version: 20150415144228) do
   end
 
   create_table "subs", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "user_events", force: true do |t|
-    t.integer  "user_id"
-    t.string   "event_id"
-    t.string   "integer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
