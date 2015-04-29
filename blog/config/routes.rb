@@ -3,23 +3,26 @@ Rails.application.routes.draw do
 
   devise_for :views
   get 'welcome/index'
-  post 'intrests/unfollow'
  
-  post 'welcome/follow'
-  post 'welcome/unfollow'
+ 
+  
+
 
   devise_for :users
   #get 'homes/show'
-  post '/follow' => 'welcome#follow'
-  post '/unfollow' => 'welcome#unfollow'
 
-   
-  post '/unfollow' => 'intrests#unfollow'
-  
+
+
+get 'intrests/:controller/:action/:user_id/:intrest_id' => 'intrests#show'
+
+get 'specifics/:controller/:action/:user_id/:specific_id' => 'specifics#show'
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
 
   # You can have the root of your site routed with "root"
 
@@ -32,7 +35,7 @@ Rails.application.routes.draw do
      end
 
 
-
+resources :specificintrests
  
   #resources :create_events
    resources :creatingevents
@@ -42,8 +45,9 @@ resources :matfakarnies do
  
     member do
     post 'upvote'
+   end  
   end
-end
+
 
 
 
@@ -51,9 +55,6 @@ end
   resources :askproviders do
     resources :answers
 end
-
-get '/:controller/:action' => 'pages#index'
-
 post '/askproviders/:id/answers/new' => 'answers#new'
 
   root 'welcome#index'
@@ -118,4 +119,5 @@ post '/askproviders/:id/answers/new' => 'answers#new'
     end
   end
    resources :relationships,       only: [:create, :destroy]
+   resources :specifics
 end

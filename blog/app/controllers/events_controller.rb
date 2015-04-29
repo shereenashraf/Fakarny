@@ -9,8 +9,10 @@ def index
   end
  
  
- def new
-end
+  def show
+    @event = Event.find(params[:id])
+  end
+
 def create
   @event =Event.new(event_params)
  @event.save
