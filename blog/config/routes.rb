@@ -10,13 +10,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   #get 'homes/show'
-  post '/follow' => 'welcome#follow' 
-
-  post'/unfollow' => 'welcome#unfollow'
-
-
-
-
   post '/follow' => 'welcome#follow'
   post '/unfollow' => 'welcome#unfollow'
 
