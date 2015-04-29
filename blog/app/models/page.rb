@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
-
+has_many :askprovider
 
         mount_uploader :picture, PictureUploader
         

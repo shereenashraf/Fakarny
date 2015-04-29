@@ -8,6 +8,8 @@ class AnswersController < ApplicationController
 	def create
     @askprovider = Askprovider.find(params[:askprovider_id])
     @answer = Answers.create(answer_params)
+    @answer.askprovider_id = @askprovider.id
+    @answer.save
     redirect_to askprovider_path(@askprovider)
   end
  
@@ -19,4 +21,4 @@ class AnswersController < ApplicationController
       params.require(:answers).permit(:answerer, :body)
     end
 end
-
+  

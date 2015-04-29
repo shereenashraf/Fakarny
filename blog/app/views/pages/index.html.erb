@@ -25,17 +25,17 @@
     <tr>
       <td><%= page.providername %></td>
 
-      <td><%= link_to 'Show', page_path(page) %></td>
-       <td><%= link_to 'Edit', edit_page_path(page) %></td>
+      <br> <td><%= link_to 'Show', page_path(page) %></td> 
+       <td><%= link_to 'Edit', edit_page_path(page) %></td> </br>
        
     </tr>
 
 
 </table>
 
-<%= link_to 'Back', pages_path %>
-<% end %>
 
+<% end %>
+<%= link_to 'Back', pages_path %>
   <%= link_to 'Ask a question', controller: 'askproviders' %>
 
 
