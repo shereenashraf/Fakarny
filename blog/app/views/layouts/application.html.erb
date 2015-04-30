@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Welcome to Fakarny</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
- 
-  <%= csrf_meta_tags %>
-
-   
- 
+  <title>Welcome to Fakarny</title>	
+   							
 </head>
-
-<body>
-  
+<body>  
+<%= stylesheet_link_tag "defaults", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>	
+    <%= csrf_meta_tags %>	
 <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
