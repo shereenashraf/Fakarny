@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425102709) do
+ActiveRecord::Schema.define(version: 20150427140703) do
 
   create_table "answers", force: true do |t|
     t.string   "answerer"
@@ -114,6 +114,22 @@ ActiveRecord::Schema.define(version: 20150425102709) do
 
   add_index "replytoproviders", ["askprovider_id"], name: "index_replytoproviders_on_askprovider_id"
 
+  create_table "specific_intrests", force: true do |t|
+    t.string   "specific_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "specifics", force: true do |t|
+    t.string   "specific_name"
+    t.integer  "intrests_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "intrest_id"
+  end
+
+  add_index "specifics", ["intrests_id"], name: "index_specifics_on_intrests_id"
+
   create_table "sports", force: true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
@@ -142,6 +158,14 @@ ActiveRecord::Schema.define(version: 20150425102709) do
   create_table "user_intrests", force: true do |t|
     t.integer  "inrest_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_specific_intrests", force: true do |t|
+    t.integer  "intrest_id"
+    t.integer  "user_id"
+    t.integer  "specific_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

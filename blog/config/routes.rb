@@ -55,7 +55,7 @@ resources :matfakarnies do
   resources :askproviders do
     resources :answers
 end
-post '/askproviders/:id/answers/new' => 'answers#new'
+ post '/askproviders/:id/answers/new' => 'answers#new'
 
   root 'welcome#index'
 

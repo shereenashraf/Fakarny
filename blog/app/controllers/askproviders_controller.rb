@@ -1,6 +1,7 @@
 class AskprovidersController < ApplicationController
 		  def show
-    @askprovider = Askprovider.find(params[:id])
+      @askprovider = Askprovider.find(params[:id])
+      @answers = Answers.where(askprovider_id: params[:id])
   end
   def index
     @askproviders = Askprovider.all
