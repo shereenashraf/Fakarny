@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150427140703) do
+=======
+ActiveRecord::Schema.define(version: 20150430202514) do
+
+  create_table "answer_notifications", force: true do |t|
+    t.boolean  "checked"
+    t.integer  "user_id"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "answer_notifications", ["page_id"], name: "index_answer_notifications_on_page_id"
+  add_index "answer_notifications", ["user_id"], name: "index_answer_notifications_on_user_id"
+>>>>>>> caroline_Sprint2
 
   create_table "answers", force: true do |t|
     t.string   "answerer"
@@ -30,12 +45,38 @@ ActiveRecord::Schema.define(version: 20150427140703) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "ask_p_rovider_notifications", force: true do |t|
+    t.boolean  "checked"
+    t.integer  "user_id"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ask_p_rovider_notifications", ["page_id"], name: "index_ask_p_rovider_notifications_on_page_id"
+  add_index "ask_p_rovider_notifications", ["user_id"], name: "index_ask_p_rovider_notifications_on_user_id"
+
+>>>>>>> caroline_Sprint2
   create_table "askproviders", force: true do |t|
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "creatingevents", force: true do |t|
+    t.date     "date"
+    t.string   "time"
+    t.text     "place"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+>>>>>>> caroline_Sprint2
   create_table "events", force: true do |t|
     t.string   "date"
     t.string   "time"
@@ -69,6 +110,20 @@ ActiveRecord::Schema.define(version: 20150427140703) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "notifications", force: true do |t|
+    t.boolean  "checked"
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notifications", ["event_id"], name: "index_notifications_on_event_id"
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id"
+
+>>>>>>> caroline_Sprint2
   create_table "pages", force: true do |t|
     t.text     "providername"
     t.text     "providerinfo"
@@ -78,17 +133,35 @@ ActiveRecord::Schema.define(version: 20150427140703) do
     t.string   "picture"
   end
 
+<<<<<<< HEAD
   create_table "providerquestions", force: true do |t|
     t.text     "text"
+=======
+  create_table "profiles", force: true do |t|
+    t.string   "name"
+    t.string   "age"
+    t.string   "city"
+    t.integer  "user_id"
+>>>>>>> caroline_Sprint2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "questions", force: true do |t|
     t.text     "body"
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+=======
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
+  create_table "questions", force: true do |t|
+    t.text     "body"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> caroline_Sprint2
   end
 
   add_index "questions", ["event_id"], name: "index_questions_on_event_id"
@@ -96,14 +169,20 @@ ActiveRecord::Schema.define(version: 20150427140703) do
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
+<<<<<<< HEAD
     t.datetime "created_at"
     t.datetime "updated_at"
+=======
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+>>>>>>> caroline_Sprint2
   end
 
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
+<<<<<<< HEAD
   create_table "replytoproviders", force: true do |t|
     t.string   "providerreplier"
     t.text     "body"
@@ -130,6 +209,8 @@ ActiveRecord::Schema.define(version: 20150427140703) do
 
   add_index "specifics", ["intrests_id"], name: "index_specifics_on_intrests_id"
 
+=======
+>>>>>>> caroline_Sprint2
   create_table "sports", force: true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
@@ -142,6 +223,7 @@ ActiveRecord::Schema.define(version: 20150427140703) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "user_events", force: true do |t|
     t.integer  "user_id"
     t.string   "event_id"
@@ -150,6 +232,8 @@ ActiveRecord::Schema.define(version: 20150427140703) do
     t.datetime "updated_at"
   end
 
+=======
+>>>>>>> caroline_Sprint2
   create_table "user_friendships", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -162,6 +246,7 @@ ActiveRecord::Schema.define(version: 20150427140703) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "user_specific_intrests", force: true do |t|
     t.integer  "intrest_id"
     t.integer  "user_id"
@@ -170,6 +255,8 @@ ActiveRecord::Schema.define(version: 20150427140703) do
     t.datetime "updated_at"
   end
 
+=======
+>>>>>>> caroline_Sprint2
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -213,4 +300,13 @@ ActiveRecord::Schema.define(version: 20150427140703) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "xes", force: true do |t|
+    t.integer  "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+>>>>>>> caroline_Sprint2
 end
