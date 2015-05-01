@@ -1,13 +1,13 @@
 class PagesController < ApplicationController
 
 
-  def index
-    if params[:search]
-      @pages = Page.search(params[:search]).order("created_at DESC")
-    else
-      @pages = Page.order("created_at DESC")
-    end
+   def index
+  if params[:search]
+    @pages = Page.search(params[:search]).order("created_at DESC")
+  else
+    @pages =  Page.all.order('created_at DESC')
   end
+end
 
     def show
     @page = Page.find(params[:id])
@@ -17,19 +17,7 @@ class PagesController < ApplicationController
     def new
   @page = Page.new
   end
-def follow 
-    @user_id = params[:user_id];
-    @page_id = params[:page_id];
-    FollowProvider.create(user_id: params[:user_id], page_id: params[:page_id]);
-    @page = Page.find(@page_id)
-    redirect_to :back
-  end
-  def unfollow
 
-   @user =  FollowProvider.find_by(user_id: params[:user_id], page_id: params[:page_id]);
-    @user.destroy
-  redirect_to :back
-end
 
   
   def edit

@@ -9,7 +9,7 @@
       <td><%= matfakarny.title %></td>
     <td><%= pluralize(matfakarny.votes.count, "vote") %></td>
     <td><%= button_to '+1', upvote_matfakarny_path(matfakarny), method: :post %></td>
-
-  </tr>
+<td><%= button_to "- Remove Proposal", {:controller => "matfakarnies", :action => 'destroy', :id => matfakarny.id}, :confirm => "Are you sure you want to remove #{matfakarny.title}?", :method => :delete %></td>
+</tr>
 <% end %>
 </table>
