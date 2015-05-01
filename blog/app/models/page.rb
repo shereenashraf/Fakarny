@@ -37,3 +37,4 @@ has_many :askprovider
     end
 
 
+end

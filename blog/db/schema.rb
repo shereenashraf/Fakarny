@@ -47,15 +47,6 @@ ActiveRecord::Schema.define(version: 20150501164732) do
     t.datetime "updated_at"
   end
 
-  create_table "creatingevents", force: true do |t|
-    t.date     "date"
-    t.string   "time"
-    t.text     "place"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "events", force: true do |t|
     t.string   "date"
     t.string   "time"
@@ -116,11 +107,17 @@ ActiveRecord::Schema.define(version: 20150501164732) do
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
+  create_table "providerquestions", force: true do |t|
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "questions", force: true do |t|
     t.text     "body"
     t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "questions", ["event_id"], name: "index_questions_on_event_id"
@@ -135,6 +132,16 @@ ActiveRecord::Schema.define(version: 20150501164732) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
+  create_table "replytoproviders", force: true do |t|
+    t.string   "providerreplier"
+    t.text     "body"
+    t.integer  "askprovider_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "replytoproviders", ["askprovider_id"], name: "index_replytoproviders_on_askprovider_id"
 
   create_table "specific_intrests", force: true do |t|
     t.string   "specific_name"
@@ -160,6 +167,14 @@ ActiveRecord::Schema.define(version: 20150501164732) do
   end
 
   create_table "subs", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_events", force: true do |t|
+    t.integer  "user_id"
+    t.string   "event_id"
+    t.string   "integer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

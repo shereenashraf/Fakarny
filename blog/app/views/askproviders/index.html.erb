@@ -12,11 +12,12 @@
       <td> <%= askprovider.text %> </td>
     </tr>
     <td><%= link_to 'Post reply', askprovider_path(askprovider) %></td>
+     
      <td><%= link_to 'Destroy', askprovider_path(askprovider),
-              method: :delete,
+              method: :destroy,
               data: { confirm: 'Are you sure?' } %></td>
     <tr>
-
+<!-- the button destroy links to the method destroy in askprovider controller to delete the question selected-->
   <% end %>
 
 </table>
