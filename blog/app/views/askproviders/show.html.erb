@@ -17,3 +17,4 @@
 <% @askprovider= Askprovider.find(params[:id])%>
  <%= link_to "Add Reply",{controller:"answers",action:"new",askprovider_id:@askprovider}%>
 <%= link_to 'Back', askproviders_path %>
+

@@ -12,8 +12,8 @@
       <td> <%= askprovider.text %> </td>
     </tr>
     <td><%= link_to 'Post reply', askprovider_path(askprovider) %></td>
-    <td><%= link_to 'Delete', askprovider_path(askprovider),
-              method: :destroy,
+     <td><%= link_to 'Destroy', askprovider_path(askprovider),
+              method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     <tr>
 

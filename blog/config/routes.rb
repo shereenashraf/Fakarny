@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+ 
   get 'provider/question'
 
   devise_for :views
@@ -58,6 +59,7 @@ resources :askprovidernotifications
     resources :answers
 end
  post '/askproviders/:id/answers/new' => 'answers#new'
+
 
   root 'welcome#index'
 
@@ -123,4 +125,5 @@ end
   end
    resources :relationships,       only: [:create, :destroy]
    resources :specifics
+
 end
