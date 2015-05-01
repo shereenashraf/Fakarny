@@ -7,6 +7,7 @@ class AskprovidersController < ApplicationController
     @askproviders = Askprovider.all
   end
 	 def new
+   @askproviders = Askprovider.new
   end
   def create
   @askprovider = Askprovider.new(askprovider_params)
