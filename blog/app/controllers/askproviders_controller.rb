@@ -18,6 +18,7 @@ class AskprovidersController < ApplicationController
     render 'new'
   end
 end
+# in method destroy it takes Askprovider id as parameters and delete it then redirect to askproviders index
 def destroy
   @askprovider = Askprovider.find(params[:id])
   @askprovider.destroy
