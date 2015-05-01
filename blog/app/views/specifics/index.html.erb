@@ -6,14 +6,15 @@
 <% end %>
 <% end %>
 <ul>
+ 
 <% @specifics.each do |specific| %>
-<% if specific.intrest_id = params[:intrest_id]%>
+<%if specific.intrest_id == params[:id] %>
 
 	<li>
 		<%= link_to specific.specific_name , specific, class: "btn btn-primary" %>
         
 	</li>	
 <% end %>
-
+ 
 	<% end %>
 </ul>
