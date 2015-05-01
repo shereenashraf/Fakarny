@@ -8,11 +8,7 @@ Rails.application.routes.draw do
  
   
 
-
-devise_for :users, :controllers => { :registrations => "registrations" }
-  #get 'homes/show'
-
-
+devise_for :users
 
 get 'intrests/:controller/:action/:user_id/:intrest_id' => 'intrests#show'
 
@@ -21,7 +17,9 @@ get 'specifics/:controller/:action/:user_id/:specific_id' => 'specifics#show'
 get 'pages/:controller/:action/:user_id/:page_id' => 'pages#show'
 
 
+get '/:controller/:action' => 'matfakarnies#index'
 
+ get '/:controller/:action' => 'pages#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
