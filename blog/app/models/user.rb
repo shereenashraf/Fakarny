@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
          has_many :followers, through: :followings
 
        #  has_many :intrests => :destroy
+
+    
 end

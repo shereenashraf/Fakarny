@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post 'welcome/follow'
   post 'welcome/unfollow'
 
-  devise_for :users
+devise_for :users, :controllers => { :registrations => "registrations" }
   #get 'homes/show'
   post '/follow' => 'welcome#follow' 
 
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
+resources :articles
 
  resources :pages
 
@@ -54,7 +55,7 @@ end
 
 
 
-
+resources :askprovidernotifications 
   resources :askproviders do
     resources :answers
 end
@@ -66,7 +67,6 @@ post '/askproviders/:id/answers/new' => 'answers#new'
   root 'welcome#index'
 
 
- 
  resources :intrests
 
   # Example of regular route:
@@ -120,6 +120,8 @@ post '/askproviders/:id/answers/new' => 'answers#new'
   #get 'index/sports'
   #root 'relationships#sports'
   resources :users do
+    resources:profiles 
+  
     member do
       get :following, :followers
     end
