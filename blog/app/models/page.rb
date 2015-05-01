@@ -2,10 +2,7 @@ class Page < ActiveRecord::Base
 has_many :askprovider
 
         mount_uploader :picture, PictureUploader
-        
-   validates :providername, presence: true,
-                    length: { minimum: 5 }
-                
+
  validates :providerinfo, presence: true,
                     length: { minimum: 10 }
 
@@ -17,11 +14,15 @@ has_many :askprovider
    validate  :picture_size
 
  
-def self.search(query)
-  where("providername like ?", "%#{query}%") 
-end
-
-end
+  validates :providername, presence: true, uniqueness: true
+  validates :content, presence: true
+ 
+  # It returns the articles whose titles contain one or more words that form the query
+  def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    where("providername like ?", "%#{query}%") 
+  end
+         
 
             
 
