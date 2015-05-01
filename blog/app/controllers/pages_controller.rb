@@ -17,7 +17,19 @@ end
     def new
   @page = Page.new
   end
+def follow 
+    @user_id = params[:user_id];
+    @page_id = params[:page_id];
+    FollowProvider.create(user_id: params[:user_id], page_id: params[:page_id]);
+    @page = Page.find(@page_id)
+    redirect_to :back
+  end
+  def unfollow
 
+   @user =  FollowProvider.find_by(user_id: params[:user_id], page_id: params[:page_id]);
+    @user.destroy
+  redirect_to :back
+end
 
   
   def edit

@@ -24,7 +24,7 @@ end
   def upvote
   @matfakarny = Matfakarny.find(params[:id])
   @matfakarny.votes.create
-  redirect_to(matfakarny_path)
+  redirect_to :back
 end
   private
   def matfakarny_params

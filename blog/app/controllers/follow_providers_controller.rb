@@ -1,0 +1,2 @@
+class FollowProvidersController < ApplicationController
+end

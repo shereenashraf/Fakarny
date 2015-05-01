@@ -17,6 +17,7 @@ get 'intrests/:controller/:action/:user_id/:intrest_id' => 'intrests#show'
 
 get 'specifics/:controller/:action/:user_id/:specific_id' => 'specifics#show'
 
+get 'pages/:controller/:action/:user_id/:page_id' => 'pages#show'
 
 
 

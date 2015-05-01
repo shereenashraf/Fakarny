@@ -23,3 +23,17 @@
 <%= link_to 'createevent', new_event_path %>
 
 
+	
+
+<% @follow = FollowProvider.find_by(user_id: current_user.id, page_id: @page.id) %>
+<%  if @follow.nil? %>
+
+	
+
+<%= link_to "Follow" , {controller: "pages", action: "follow", user_id: current_user.id, page_id: @page.id}  %>
+
+<% else %>
+
+<%= link_to "unFollow-btn" , {controller: "pages", action: "unfollow", user_id: current_user.id, page_id: @page.id}  %>
+
+<%end%>

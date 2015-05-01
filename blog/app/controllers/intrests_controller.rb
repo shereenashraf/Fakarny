@@ -14,7 +14,7 @@ end
     @Intrest_id = params[:intrest_id];
     UserIntrest.create(user_id: params[:user_id], inrest_id: params[:intrest_id]);
     @intrest = Intrest.find(@Intrest_id)
-    redirect_to intrests_path
+    redirect_to :back
   end
 
 
@@ -24,7 +24,7 @@ def unfollow
 
    @user =  UserIntrest.find_by(user_id: params[:user_id], inrest_id: params[:intrest_id]);
     @user.destroy
-  redirect_to intrests_path
+  redirect_to :back
 end
   
 
