@@ -119,8 +119,8 @@ ActiveRecord::Schema.define(version: 20150501164732) do
   create_table "questions", force: true do |t|
     t.text     "body"
     t.integer  "event_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "questions", ["event_id"], name: "index_questions_on_event_id"
@@ -144,10 +144,13 @@ ActiveRecord::Schema.define(version: 20150501164732) do
 
   create_table "specifics", force: true do |t|
     t.string   "specific_name"
+    t.integer  "intrests_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "intrest_id"
   end
+
+  add_index "specifics", ["intrests_id"], name: "index_specifics_on_intrests_id"
 
   create_table "sports", force: true do |t|
     t.integer  "follower_id"
@@ -157,14 +160,6 @@ ActiveRecord::Schema.define(version: 20150501164732) do
   end
 
   create_table "subs", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "user_events", force: true do |t|
-    t.integer  "user_id"
-    t.string   "event_id"
-    t.string   "integer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
