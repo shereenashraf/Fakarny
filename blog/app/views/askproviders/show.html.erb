@@ -2,7 +2,18 @@
   <strong>Ask Question:</strong>
   <%= @askprovider.text %>
 </p>
-<%= @askprovider= Askprovider.find(params[:id])%>
- <%= render @askprovider.answers%>
-<%= link_to "Add Reply",{controller:"answers",action:"new",askprovider_id:@askprovider}%>
+<h2>Comments</h2>
+<% @answers.each do |answer| %>
+<p>
+  <strong>Replier:</strong>
+  <%= answer.answerer %>
+
+</p>
+  <p>
+    <strong>Comment:</strong>
+    <%= answer.body %>
+  </p>
+<% end %>
+<% @askprovider= Askprovider.find(params[:id])%>
+ <%= link_to "Add Reply",{controller:"answers",action:"new",askprovider_id:@askprovider}%>
 <%= link_to 'Back', askproviders_path %>

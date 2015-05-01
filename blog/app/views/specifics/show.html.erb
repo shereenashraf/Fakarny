@@ -1,0 +1,14 @@
+<h1><%=@specific.specific_name	%></h1>
+<% @follow = UserSpecificIntrest.find_by(user_id: current_user.id, specific_id:@specific.id, intrest_id: @intrest.id ) %>
+<%  if @follow.nil? %>
+
+	
+
+<%= link_to "Follow" , {controller: "specifics", action: "follow", user_id: current_user.id, specific_id: @specific.id}  %>
+
+<% else %>
+
+<%= link_to "unFollow" , {controller: "specifics", action: "unfollow", user_id: current_user.id, specific_id: @specific.id}  %>
+
+
+<%end%>

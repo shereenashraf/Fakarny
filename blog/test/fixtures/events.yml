@@ -6,8 +6,3 @@ one:
   place: MyString
   description: MyText
 
-two:
-  date: MyString
-  time: MyString
-  place: MyString
-  description: MyText

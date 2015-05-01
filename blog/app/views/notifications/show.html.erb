@@ -1,0 +1,4 @@
+link_to user_notifications_path(current_user), :class => "dropdown-toggle" do
+        i.icon-envelope style ="font-size: 26px;" alt = "question"
+        span.badge
+          = "#{current_user.notifications.unread.count}"
