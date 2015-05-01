@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
 
 
-  devise_for :users
+devise_for :users, :controllers => { :registrations => "registrations" }
   #get 'homes/show'
 
 
@@ -27,6 +27,7 @@ get 'pages/:controller/:action/:user_id/:page_id' => 'pages#show'
 
   # You can have the root of your site routed with "root"
 
+resources :articles
 
  resources :pages
 
@@ -52,7 +53,7 @@ resources :matfakarnies do
 
 
 
-
+resources :askprovidernotifications 
   resources :askproviders do
     resources :answers
 end
@@ -61,7 +62,6 @@ end
   root 'welcome#index'
 
 
- 
  resources :intrests
 
   # Example of regular route:
@@ -115,6 +115,8 @@ end
   #get 'index/sports'
   #root 'relationships#sports'
   resources :users do
+    resources:profiles 
+  
     member do
       get :following, :followers
     end

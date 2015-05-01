@@ -9,7 +9,15 @@
 
 <% else %>
 
+
 <%= link_to "unFollow" , {controller: "intrests", action: "unfollow", user_id: current_user.id, intrest_id: @intrest.id}  %>
 
 <%end%>
 <h2><%= link_to "Specific_intrests", specifics_path%></h2>
+
+
+
+
+ <td><%= link_to 'unFollow', intrests_path,
+              method: :destroy%></td>
+
