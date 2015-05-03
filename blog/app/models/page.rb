@@ -14,8 +14,8 @@ has_many :askprovider
    validate  :picture_size
 
  
-  validates :providername, presence: true, uniqueness: true
-  validates :content, presence: true
+ # validates :providername, presence: true, uniqueness: true
+#  validates :content, presence: true
  
   # It returns the articles whose titles contain one or more words that form the query
   def self.search(query)
@@ -36,4 +36,4 @@ has_many :askprovider
       end
     end
 
-
+end
