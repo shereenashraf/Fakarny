@@ -13,12 +13,7 @@
   <%= yield %>
 
 
-<% @pages.each do |page| %>
-  <div class="page">
-    <h1 class="page-providername"><%= link_to page.providername, page %></h1>
-  
-  </div>
-<% end %>
+
 
 
 
@@ -40,7 +35,7 @@
 
       <br> <td><%= link_to 'Show', page_path(page) %></td> 
        <td><%= link_to 'Edit', edit_page_path(page) %></td> </br>
-       
+  <%= link_to 'Ask a question', controller: 'askproviders' %>     
 
        </tr>
 
@@ -52,7 +47,7 @@
 
 <% end %>
 <%= link_to 'Back', pages_path %>
-  <%= link_to 'Ask a question', controller: 'askproviders' %>
+  
 
 
 
